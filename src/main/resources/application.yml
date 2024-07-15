@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: kopring-jpa
+  datasource:
+    url: jdbc:mysql://localhost:3307/mydatabase
+    username: myuser
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: create
