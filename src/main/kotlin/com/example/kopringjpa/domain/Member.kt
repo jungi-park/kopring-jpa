@@ -8,7 +8,7 @@ import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 
 @Entity
-data class Member(
+class Member(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long,
     val name: String,
     @ManyToOne @JoinColumn val guild: Guild
