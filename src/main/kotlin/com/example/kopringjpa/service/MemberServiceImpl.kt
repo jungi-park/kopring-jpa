@@ -4,6 +4,7 @@ import com.example.kopringjpa.domain.Member
 import com.example.kopringjpa.dto.MemberReqDto
 import com.example.kopringjpa.repository.MemberRepository
 import org.springframework.stereotype.Service
+import kotlin.jvm.optionals.getOrNull
 
 @Service
 class MemberServiceImpl(val memberRepository: MemberRepository) : MemberService {
@@ -15,6 +16,10 @@ class MemberServiceImpl(val memberRepository: MemberRepository) : MemberService 
             password = memberDto.password
         )
         memberRepository.save(member)
+    }
+
+    override fun findMemberById(id: Long): Member? {
+        return memberRepository.findById(id).getOrNull()
     }
 
 }
