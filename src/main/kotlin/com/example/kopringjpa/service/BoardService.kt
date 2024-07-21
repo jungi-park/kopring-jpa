@@ -1,7 +1,7 @@
 package com.example.kopringjpa.service
 
-import com.example.kopringjpa.dto.BoardReqDTO
+import com.example.kopringjpa.dto.BoardReqDto
 
 interface BoardService {
-    fun writeBoard(boardDto: BoardReqDTO)
+    fun writeBoard(boardDto: BoardReqDto)
 }
