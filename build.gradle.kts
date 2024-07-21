@@ -33,6 +33,7 @@ dependencies {
     //    JPAAnnotationProcessor를 사용하기 위해 마지막에 :jakarta를 붙입니다
     kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation ("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     runtimeOnly("com.mysql:mysql-connector-j")

@@ -1,8 +1,10 @@
 package com.example.kopringjpa.controller
 
+import com.example.kopringjpa.domain.Board
 import com.example.kopringjpa.dto.BoardReqDTO
 import com.example.kopringjpa.service.BoardService
 import com.example.kopringjpa.service.MemberService
+import jakarta.validation.Valid
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -16,7 +18,7 @@ class BoardController(val boardService: BoardService) {
     private val LOG = LoggerFactory.getLogger(MemberService::class.java)
 
     @PostMapping
-    fun writeBoard(@RequestBody boardDto: BoardReqDTO) {
+    fun writeBoard(@RequestBody @Valid boardDto: BoardReqDTO) {
         LOG.info("boardDto = $boardDto")
         boardService.writeBoard(boardDto)
     }

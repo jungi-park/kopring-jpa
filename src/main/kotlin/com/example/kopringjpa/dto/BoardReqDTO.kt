@@ -1,7 +1,8 @@
 package com.example.kopringjpa.dto
 
+import jakarta.validation.constraints.NotEmpty
 
 data class BoardReqDTO(
-    val title: String,
-    val contents: String,
+    @NotEmpty val title: String,
+    @NotEmpty val contents: String,
 )

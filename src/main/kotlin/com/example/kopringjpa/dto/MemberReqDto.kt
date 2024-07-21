@@ -1,7 +1,9 @@
 package com.example.kopringjpa.dto
 
+import jakarta.validation.constraints.NotEmpty
+
 data class MemberReqDto(
-    val name: String,
-    val userId: String,
-    val password: String
+    @NotEmpty val name: String,
+    @NotEmpty val userId: String,
+    @NotEmpty val password: String
 )
