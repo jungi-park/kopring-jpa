@@ -24,7 +24,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-//    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-web")
     // ✅ querydsl을 설치합니다. ":jakarta"를 꼭 설정합니다
     implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
@@ -32,6 +32,9 @@ dependencies {
     //    kotlin 코드가 아니라면 kapt 대신 annotationProcessor를 사용합니다
     //    JPAAnnotationProcessor를 사용하기 위해 마지막에 :jakarta를 붙입니다
     kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
+    implementation("io.jsonwebtoken:jjwt-api:0.11.5") // jjwt API
+    implementation("io.jsonwebtoken:jjwt-impl:0.11.5") // jjwt 구현
+    implementation("io.jsonwebtoken:jjwt-jackson:0.11.5") // Jackson을 사용하는 경우
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation ("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
