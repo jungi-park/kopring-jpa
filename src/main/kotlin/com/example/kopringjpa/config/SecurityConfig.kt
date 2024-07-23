@@ -1,6 +1,6 @@
 package com.example.kopringjpa.config
 
-import com.example.kopringjpa.common.filter.JwtRequestFilter
+import com.example.kopringjpa.auth.filter.JwtRequestFilter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.AuthenticationManager
