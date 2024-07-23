@@ -1,5 +1,6 @@
 package com.example.kopringjpa.service
 
+import com.example.kopringjpa.common.enums.Role
 import com.example.kopringjpa.domain.Member
 import com.example.kopringjpa.dto.MemberReqDto
 import com.example.kopringjpa.repository.MemberRepository
@@ -14,13 +15,13 @@ class MemberServiceImpl(
 ) : MemberService {
 
     override fun createMember(memberDto: MemberReqDto) {
-        // 비밀번호 암호화
-        val encodedPassword = passwordEncoder.encode(memberDto.password)
+
 
         val member = Member(
             name = memberDto.name,
             userId = memberDto.userId,
-            password = encodedPassword
+            password = passwordEncoder.encode(memberDto.password),
+            role = Role.ROLE_USER
         )
         memberRepository.save(member)
     }

@@ -1,6 +1,7 @@
 package com.example.kopringjpa.domain
 
 import com.example.kopringjpa.common.domain.BaseEntity
+import com.example.kopringjpa.common.enums.Role
 import com.example.kopringjpa.common.enums.Status
 import jakarta.persistence.*
 import org.springframework.security.core.GrantedAuthority
@@ -13,9 +14,10 @@ class Member(
     val userId: String,
     val password: String,
     @Enumerated(EnumType.STRING) val status: Status = Status.ACTIVE,
-    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY) val board: List<Board> = emptyList()
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY) val board: List<Board> = emptyList(),
+    @Enumerated(EnumType.STRING) val role: Role // 하나의 Role만 가지도록 변경
 ) : BaseEntity() {
     fun authorities(): List<GrantedAuthority> {
-        return listOf(SimpleGrantedAuthority("ROLE_USER")) // 기본적으로 USER 권한 부여
+        return listOf(SimpleGrantedAuthority(role.name)) // 기본적으로 USER 권한 부여
     }
 }
