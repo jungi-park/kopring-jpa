@@ -30,4 +30,8 @@ class MemberServiceImpl(
         return memberRepository.findById(id).getOrNull()
     }
 
+    override fun findMemberByUserId(userId: String): Member? {
+        return memberRepository.findByUserId(userId)
+    }
+
 }

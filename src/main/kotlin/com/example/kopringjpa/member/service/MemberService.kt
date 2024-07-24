@@ -7,4 +7,6 @@ interface MemberService {
     fun createMember(memberDto: MemberReqDto)
 
     fun findMemberById(id:Long): Member?
+
+    fun findMemberByUserId(userId:String): Member?
 }

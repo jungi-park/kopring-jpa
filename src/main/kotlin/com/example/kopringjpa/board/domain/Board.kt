@@ -8,9 +8,9 @@ import jakarta.persistence.*
 @Entity
 class Board(
     @Id @GeneratedValue val id: Long = 0L,
-    val title: String,
+    var title: String,
     var viewCount: Int = 0,
     @Enumerated(EnumType.STRING) val status: Status = Status.ACTIVE,
-    val contents: String,
+    var contents: String,
     @ManyToOne @JoinColumn val member: Member
 ) : BaseEntity()
